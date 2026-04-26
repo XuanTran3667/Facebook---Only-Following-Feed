@@ -1,0 +1,32 @@
+! Title: Facebook - Only Following Feed
+! Description: Hide all suggested/recommended content, keep only followed sources
+! Version: 1.0.0
+! Last modified: 2026-04-26
+! License: MIT
+
+! ==== Suggested / Recommended posts ====
+www.facebook.com##div:has-text(/Suggested for you/i)
+www.facebook.com##div:has-text(/Recommended for you/i)
+www.facebook.com##div:has-text(/Because you follow/i)
+www.facebook.com##div:has-text(/Suggested Pages/i)
+www.facebook.com##div:has-text(/Suggested Groups/i)
+www.facebook.com##div:has-text(/Join Group/i)
+www.facebook.com##div:has-text(/Suggested post/i)
+
+! ==== People / Pages suggestions ====
+www.facebook.com##div:has-text(/People you may know/i)
+www.facebook.com##div:has-text(/Pages you may like/i)
+
+! ==== Reels & Explore (thường là nội dung lạ) ====
+www.facebook.com##[aria-label="Reels"]:upward(2)
+
+! ==== Group posts you are not in ====
+www.facebook.com##div:has-text(/From a group you’re not in/i)
+
+! ==== Sidebar suggestions ====
+www.facebook.com##div:has-text(/Sponsored/i)
+www.facebook.com##div:has-text(/Suggested/i)
+
+! ==== Mobile (ẩn feed đề xuất sau ô đăng bài) ====
+facebook.com##body.Android div#screen-root>div>div>div.m:has(div[aria-label="What's on your mind?"]) ~ *
+facebook.com##body.iOS div#screen-root>div>div>div.m:has(div[aria-label="What's on your mind?"]) ~ *
